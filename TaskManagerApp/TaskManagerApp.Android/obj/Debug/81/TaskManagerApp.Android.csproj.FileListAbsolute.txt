@@ -105,6 +105,4 @@ C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
-C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\bin\Debug\netstandard2.0\TaskManagerApp.dll
-C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\bin\Debug\TaskManagerApp.dll.mdb
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\linksrc\TaskManagerApp.dll.mdb

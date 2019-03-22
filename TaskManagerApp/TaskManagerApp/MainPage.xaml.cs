@@ -17,36 +17,41 @@ namespace TaskManagerApp
     {
         public List<Users> usersss { get; set; }
 
-        ObservableCollection<Users> usersobsv;
+        static ObservableCollection<string> usersobsv;
         IEnumerable<Users> users;
         Service service;
         string response = "";
 
-        public static async Task<ObservableCollection<Users>> getUsers()
+        public static async Task<ObservableCollection<string>> getUsers()
         {
             try
             {
-                var result = new ObservableCollection<Users>();
-                using (var client = new HttpClient())
+                var result = new ObservableCollection<string>();
+                
+                using(var handler = new HttpClientHandler { UseDefaultCredentials = true })
                 {
-                    var request = new HttpRequestMessage
+                    using (HttpClient client = new HttpClient())
                     {
-                        RequestUri = new Uri("http://10.0.2.2:50368/api/Users/Get"),
-                        Method = HttpMethod.Get
-                    };
-
-                    request.Headers.Add("Accept", "application/json");
-                    var response = await client.SendAsync(request);
-                    if (response.StatusCode == HttpStatusCode.OK)
-                    {
-                        var json = await response.Content.ReadAsStringAsync();
-                        var myObj = JsonConvert.DeserializeObject<ObservableCollection<Users>>(json);
-                        if (!Equals(myObj, null))
-                            result = myObj;
-                    }
-                    else
-                    {
-                        Debug.WriteLine(response.StatusCode);
+                        var request = new HttpRequestMessage
+                        {
+                            RequestUri = new Uri("https://rsreu.ru/schedule/540.json"),
+                            Method = HttpMethod.Get
+                        };
+                        Debug.WriteLine("I'm inside the method");
+                        request.Headers.Add("Accept", "application/json");
+                        var response = await client.SendAsync(request);
+                        Debug.WriteLine("Here shit occurs");
+                        if (response.StatusCode == HttpStatusCode.OK)
+                        {
+                            var json = await response.Content.ReadAsStringAsync();
+                            var myObj = JsonConvert.DeserializeObject<ObservableCollection<string>>(json);
+                            if (!Equals(myObj, null))
+                                result = myObj;
+                        }
+                        else
+                        {
+                            Debug.WriteLine(response.StatusCode);
+                        }
                     }
                 }
                 return result;
@@ -59,11 +64,9 @@ namespace TaskManagerApp
 
         }
 
-        public async void InvokeGetUsers()
+        public static async void InvokeGetUsers()
         {
-            ObservableCollection<Users> us = await getUsers();
-            
-            this.usersobsv = await getUsers();
+            usersobsv = await getUsers();
         }
 
         public MainPage()
