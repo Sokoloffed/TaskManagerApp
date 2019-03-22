@@ -108,7 +108,9 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "TaskManagerApp.Android.dll" comes first in this list. */
 		"TaskManagerApp.Android.dll",
 		"FormsViewGroup.dll",
+		"Newtonsoft.Json.Bson.dll",
 		"Newtonsoft.Json.dll",
+		"System.Net.Http.Formatting.dll",
 		"TaskManagerApp.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

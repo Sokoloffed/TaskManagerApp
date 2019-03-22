@@ -1,5 +1,7 @@
 FormsViewGroup
+Newtonsoft.Json.Bson
 Newtonsoft.Json
+System.Net.Http.Formatting
 System.Runtime
 TaskManagerApp
 Xamarin.Android.Arch.Core.Common
@@ -26,3 +28,10 @@ Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 netstandard
+System.Threading.Tasks
+System.Diagnostics.Debug
+System.Text.Encoding
+System.Collections
+System.Runtime.Numerics
+System.Globalization
+System.Text.Encoding.Extensions
