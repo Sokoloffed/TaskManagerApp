@@ -13,6 +13,7 @@ namespace TaskManagerApp
     {
         private readonly ApiClient apiClient;
         public ObservableRangeCollection<Users> UsersSource { get; set; }
+        List<string> Users;
 
         public MainPage()
         {
@@ -21,6 +22,7 @@ namespace TaskManagerApp
 
             UsersSource = new ObservableRangeCollection<Users>();
             apiClient = new ApiClient();
+            Users = new List<string>();
                        
             Task.Factory.StartNew(RequestData);
         }
@@ -29,35 +31,13 @@ namespace TaskManagerApp
         {
             //var t = await apiClient.GetService();
 
-            await Task.Delay(500);
-
-            var mock = new Users[]
-            {
-                new Users()
-                {
-                    Username = "tmp",
-                    Password = "123"
-                },
-                new Users()
-                {
-                    Username = "tmp",
-                    Password = "123"
-                },
-                new Users()
-                {
-                    Username = "tmp",
-                    Password = "123"
-                },
-            };
+            //await Task.Delay(500);
+            ObservableRangeCollection<Users> mock = new ObservableRangeCollection<Users>();
+            mock = await apiClient.GetUsers();
+            
 
             UsersSource.ReplaceRange(mock);
             OnPropertyChanged(nameof(UsersSource));
-        }
-
-        private async Task CallApi()
-        {
-            var response = RestService.For<IDBAPi>("http://makeup-api.herokuapp.com");
-            var maleUps = await response.GetMakeUps();
         }
 
     }
