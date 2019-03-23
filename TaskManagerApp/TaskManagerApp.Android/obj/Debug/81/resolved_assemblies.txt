@@ -3,8 +3,10 @@ C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\Java.Interop.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\Mono.Android.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\mscorlib.dll
+C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\MvvmHelpers.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\Newtonsoft.Json.Bson.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\Newtonsoft.Json.dll
+C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\Refit.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.Core.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.IO.Compression.dll
@@ -40,11 +42,13 @@ C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.ServiceModel.Internals.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.Runtime.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.ComponentModel.Composition.dll
-C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.IO.dll
+C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.ObjectModel.dll
+C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.Collections.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.Threading.Tasks.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.Diagnostics.Debug.dll
+C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.Threading.dll
+C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.IO.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.Text.Encoding.dll
-C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.Collections.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.Runtime.Numerics.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.Numerics.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp.Android\obj\Debug\81\android\assets\System.Globalization.dll

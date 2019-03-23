@@ -1,6 +1,8 @@
 FormsViewGroup
+MvvmHelpers
 Newtonsoft.Json.Bson
 Newtonsoft.Json
+Refit
 System.Net.Http.Formatting
 System.Runtime
 TaskManagerApp

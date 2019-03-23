@@ -1,7 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:system="clr-namespace:System;assembly=System.Runtime"
-             xmlns:local="clr-namespace:TaskManagerApp"
              x:Class="TaskManagerApp.MainPage"
-/>
+             >
+    <ListView ItemsSource="{Binding UsersSource}"
+                  HorizontalOptions="FillAndExpand"
+                  VerticalOptions="FillAndExpand">
+        <ListView.Header>
+            <StackLayout>
+                <Label Text="List of users" FontSize="Large"></Label>
+            </StackLayout>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Padding="5,10">
+                        <Label FontSize="Large" Text="{Binding Id}"></Label>
+                        <Label FontSize="Large" Text="{Binding Username}"></Label>
+                        <Label FontSize="Large" Text="{Binding Password}"></Label>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

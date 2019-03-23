@@ -49,7 +49,7 @@ namespace TaskManagerApp
         private async void LogButton_Clicked(object sender, EventArgs e)
         {
             
-            await Navigation.PushAsync(new NavigationPage(new MainPage()));
+            await Navigation.PushAsync(new MainPage());
         }
     }
 }
