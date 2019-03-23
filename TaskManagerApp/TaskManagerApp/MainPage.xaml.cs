@@ -5,40 +5,24 @@ using Refit;
 using MvvmHelpers;
 using TaskManagerApp.Serivces;
 using Xamarin.Forms.Xaml;
+using TaskManagerApp.Pages;
 
 namespace TaskManagerApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : ContentPage
+    public partial class MainPage : TabbedPage
     {
-        private readonly ApiClient apiClient;
-        public ObservableRangeCollection<Users> UsersSource { get; set; }
-        List<string> Users;
-
+        
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = this;
-
-            UsersSource = new ObservableRangeCollection<Users>();
-            apiClient = new ApiClient();
-            Users = new List<string>();
-                       
-            Task.Factory.StartNew(RequestData);
+            this.Children.Add(new TasksTab { Title = "Tasks tab"});
+            this.Children.Add(new Tab2 { Title = "Tab 2" });
+            this.Children.Add(new Tab3 { Title = "Tab 3" });
+             
+           
         }
 
-        private async Task RequestData()
-        {
-            //var t = await apiClient.GetService();
-
-            //await Task.Delay(500);
-            ObservableRangeCollection<Users> mock = new ObservableRangeCollection<Users>();
-            mock = await apiClient.GetUsers();
-            
-
-            UsersSource.ReplaceRange(mock);
-            OnPropertyChanged(nameof(UsersSource));
-        }
-
+        
     }
 }
