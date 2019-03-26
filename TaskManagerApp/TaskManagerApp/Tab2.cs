@@ -6,46 +6,50 @@ using Xamarin.Forms;
 using MvvmHelpers;
 using TaskManagerApp.Serivces;
 using System.Threading.Tasks;
+using TaskManagerApp.Services;
 
 namespace TaskManagerApp.Pages
 {
 	public class Tab2 : ContentPage
 	{
-        private readonly ApiClient apiClient;
-        public ObservableRangeCollection<Users> UsersSource { get; set; }
-        List<string> Users;
+        public IEnumerable<Users> UsersSource { get; set; }
+
 
 
         public Tab2 ()
 		{
-            BindingContext = this;
-
-            UsersSource = new ObservableRangeCollection<Users>();
-            //apiClient = new ApiClient("");
-            Users = new List<string>();
-
-            //Task.Factory.StartNew(RequestData);
-
-            Content = new StackLayout
+            //BindingContext = this;
+            //ObservableRangeCollection
+            //UsersSource = new IEnumerable<Users>();
+            Label label = new Label
             {
-                Children = {
-                    new Label { Text = "Tab2" }
-                }
-            
-			};
+                Text = "List of users"
+            };
+            //Task.WaitAll();
+            //RequestData();
+
+            ListView listView = new ListView();
+            List<string> names = new List<string>();
+            Task.Factory.StartNew(() => RequestData());
+            //RequestData();
+            foreach (var user in UsersSource)
+            {
+                names.Add(user.username);
+            }
+            listView.ItemsSource = names;
+            this.Content = new StackLayout { Children = { label, listView} };
 		}
 
-        private async Task RequestData()
+        private async void RequestData()
         {
             //var t = await apiClient.GetService();
-
-            //await Task.Delay(500);
-            ObservableRangeCollection<Users> mock = new ObservableRangeCollection<Users>();
-           // mock = await apiClient.GetUsers();
-            
-
-            UsersSource.ReplaceRange(mock);
-            OnPropertyChanged(nameof(UsersSource));
+            UsersService us = new UsersService();
+            IEnumerable<Users> users = await us.GetUsers();
+            UsersSource = users;
+            //IEnumerable<Users> mock = new IEnumerable<Users>();
+            //mock = await us.GetUsers();
+            //UsersSource.ReplaceRange(mock);
+            //OnPropertyChanged(nameof(UsersSource));
         }
 
 	}

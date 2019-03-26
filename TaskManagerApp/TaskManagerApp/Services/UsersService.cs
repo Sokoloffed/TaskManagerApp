@@ -22,20 +22,23 @@ namespace TaskManagerApp.Services
             this.httpClient = new HttpClient();
         }
 
-        public async Task<ObservableRangeCollection<Users>> GetUsers()
+        //public async Task<ObservableRangeCollection<Users>> GetUsers()
+        public async Task<IEnumerable<Users>> GetUsers() 
         {
-            var result = new ObservableRangeCollection<Users>();
-
+            //var result = new ObservableRangeCollection<Users>();
             var response = await httpClient.GetAsync(this.apiClient.apiUri + "Users/Get");
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                var myObj = JsonConvert.DeserializeObject<ObservableRangeCollection<Users>>(json);
+                var myObj = JsonConvert.DeserializeObject<IEnumerable<Users>>(json);
+                //var myObj = JsonConvert.DeserializeObject<ObservableRangeCollection<Users>>(json);
                 if (!Equals(myObj, null))
-                    result = myObj;
+                    return myObj;
+                    //result = myObj;
             }
 
-            return result;
+            return null;
+            //return result;
         }
 
         public async Task<Users> GetUser(string name, string password)
@@ -55,7 +58,7 @@ namespace TaskManagerApp.Services
 
         public async Task<bool> PostUser(Users user)
         {
-            var response = await httpClient.PostAsJsonAsync<Users>(this.apiClient.apiUri + @"Post", user);
+            var response = await httpClient.PostAsJsonAsync<Users>(this.apiClient.apiUri + "/Users/Post/", user);
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 return true;
