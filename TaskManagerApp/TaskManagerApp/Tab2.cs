@@ -21,7 +21,7 @@ namespace TaskManagerApp.Pages
             BindingContext = this;
 
             UsersSource = new ObservableRangeCollection<Users>();
-            apiClient = new ApiClient("");
+            //apiClient = new ApiClient("");
             Users = new List<string>();
 
             //Task.Factory.StartNew(RequestData);
@@ -41,7 +41,7 @@ namespace TaskManagerApp.Pages
 
             //await Task.Delay(500);
             ObservableRangeCollection<Users> mock = new ObservableRangeCollection<Users>();
-            mock = await apiClient.GetUsers();
+           // mock = await apiClient.GetUsers();
             
 
             UsersSource.ReplaceRange(mock);
