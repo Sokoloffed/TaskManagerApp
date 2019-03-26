@@ -1,15 +1,22 @@
-﻿namespace TaskManagerApp
+﻿using Newtonsoft.Json;
+
+namespace TaskManagerApp
 {
     public class Users
     {
-        public int Id { get; set; }
+        [JsonProperty(PropertyName ="id")]
+        public int id { get; set; }
 
-        public string Username { get; set; }
+        [JsonProperty(PropertyName = "username")]
+        public string username { get; set; }
 
-        public string Password { get; set; }
+        [JsonProperty(PropertyName = "password")]
+        public string password { get; set; }
 
+        [JsonProperty(PropertyName = "Tasks")]
         public Tasks[] Tasks { get; set; }
 
+        [JsonProperty(PropertyName = "Branches")]
         public Branches[] Branches { get; set; }
     }
 }

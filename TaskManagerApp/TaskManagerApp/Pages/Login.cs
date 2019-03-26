@@ -11,29 +11,21 @@ namespace TaskManagerApp
     {
         TableView tableView;
 
-        string username;
-        string password;
+        Entry unameE;
+        Entry upasE;
         Users user;
-        EntryCell usernameEC;
-        EntryCell passwordEC;
 
         public Login()
         {
-            this.username = String.Empty;
-            this.password = String.Empty;
             this.user = new Users();
             Title = "Login page";
-            usernameEC = new EntryCell
+            unameE = new Entry
             {
-                Label = "Enter username",
-                Placeholder = "...",
-                Keyboard = Keyboard.Default
+                Text = "Enter username"
             };
-            passwordEC = new EntryCell
+            upasE = new Entry
             {
-                Label = "Enter username",
-                Placeholder = "...",
-                Keyboard = Keyboard.Default
+                Text = "Enter password"
             };
             Button logButton = new Button
             {
@@ -50,17 +42,19 @@ namespace TaskManagerApp
             };
             logButton.Clicked += LogButton_Clicked;
             createButton.Clicked += createButton_Clicked;
-            Content = new StackLayout{ Children = { tableView, logButton } };
+            Content = new StackLayout{ Children = { unameE, upasE, createButton, logButton } };
         }
 
         private async void createButton_Clicked(object sender, EventArgs e)
         {
+            string name = unameE.Text;
+            string pas = upasE.Text;
             UsersService us = new UsersService();
             Users newUser = new Users
             {
-                Id = 1000,
-                Username = usernameEC.Placeholder.ToString(),
-                Password = passwordEC.Placeholder.ToString()
+                id = 1000,
+                username = name,
+                password = pas
             };
             bool isCreated = await us.PostUser(newUser);
             if (isCreated)
@@ -71,10 +65,10 @@ namespace TaskManagerApp
 
         private async void LogButton_Clicked(object sender, EventArgs e)
         {
-            this.username = usernameEC.Placeholder.ToString();
-            this.password = passwordEC.Placeholder.ToString();
+            string name = unameE.Text;
+            string pas = upasE.Text;
             UsersService us = new UsersService();
-            user = await us.GetUser(this.username, this.password);
+            user = await us.GetUser(name, pas);
             if(user != null)
             {
                 await Navigation.PushAsync(new MainPage(user));
