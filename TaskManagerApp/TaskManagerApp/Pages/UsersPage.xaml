@@ -4,6 +4,7 @@
              x:Class="TaskManagerApp.UsersPage">
     <ContentPage.Content>
         <StackLayout>
+            <Button Text="Get users" Clicked="Button_Clicked"/>
             <Button Text="Add" Command="{Binding CreateUserCommand}"/>
             <ListView x:Name="usList" ItemsSource="{Binding UsersList}"
                       SelectedItem="{Binding SelectedUser,Mode=TwoWay}" HasUnevenRows="True">
@@ -14,6 +15,7 @@
                                 <StackLayout>
                                     <Label Text="{Binding username}" FontSize="Medium"/>
                                     <Label Text="{Binding password}" FontSize="Medium"/>
+                                    <Label Text="{Binding id}" FontSize="Medium"/>
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>

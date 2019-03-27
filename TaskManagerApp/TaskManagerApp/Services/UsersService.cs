@@ -8,6 +8,7 @@ using System.Web;
 using System.Net.Http;
 using System.Net;
 using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 
 namespace TaskManagerApp.Services
 {
@@ -23,14 +24,14 @@ namespace TaskManagerApp.Services
         }
 
         //public async Task<ObservableRangeCollection<Users>> GetUsers()
-        public async Task<IEnumerable<Users>> GetUsers() 
+        public async Task<ObservableCollection<Users>> GetUsers() 
         {
             //var result = new ObservableRangeCollection<Users>();
             var response = await httpClient.GetAsync(this.apiClient.apiUri + "Users/Get");
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                var myObj = JsonConvert.DeserializeObject<IEnumerable<Users>>(json);
+                var myObj = JsonConvert.DeserializeObject<ObservableCollection<Users>>(json);
                 //var myObj = JsonConvert.DeserializeObject<ObservableRangeCollection<Users>>(json);
                 if (!Equals(myObj, null))
                     return myObj;

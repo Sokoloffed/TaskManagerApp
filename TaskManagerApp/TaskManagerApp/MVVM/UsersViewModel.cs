@@ -36,6 +36,19 @@ namespace TaskManagerApp.MVVM
                 (!string.IsNullOrEmpty(password.Trim())));
         }
 
+        public int id
+        {
+            get { return user.id; }
+            set
+            {
+                if (user.id != value)
+                {
+                    user.id = value;
+                    OnPropertyChanged("id");
+                }
+            }
+        }
+
         public string username
         {
             get { return user.username; }

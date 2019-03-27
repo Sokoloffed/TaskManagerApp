@@ -23,9 +23,10 @@ namespace TaskManagerApp.MVVM
 
         public INavigation Navigation { get; set; }
 
-        public UsersListViewModel()
+        public UsersListViewModel()//(ObservableCollection<UsersViewModel> uc)
         {
             UsersList = new ObservableCollection<UsersViewModel>();
+            //UsersList = uc;
             CreateUserCommand = new Command(CreateUser);
             SaveUserCommand = new Command(SaveUser);
             DeleteUserCommand = new Command(DeleteUser);

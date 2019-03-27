@@ -9,7 +9,6 @@ C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Deb
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Debug\netstandard2.0\TaskManagerApp.dll
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Debug\netstandard2.0\TaskManagerApp.pdb
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Debug\netstandard2.0\XamlC.stamp
-C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Debug\netstandard2.0\TaskManagerApp.csprojAssemblyReference.cache
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Debug\netstandard2.0\Pages\BranchesPage.xaml.g.cs
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Debug\netstandard2.0\Pages\TasksPage.xaml.g.cs
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Debug\netstandard2.0\Pages\UsersPage.xaml.g.cs

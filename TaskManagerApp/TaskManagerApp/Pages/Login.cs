@@ -21,11 +21,11 @@ namespace TaskManagerApp
             Title = "Login page";
             unameE = new Entry
             {
-                Text = "Enter username"
+                Text = "Ba"
             };
             upasE = new Entry
             {
-                Text = "Enter password"
+                Text = "Sya"
             };
             Button logButton = new Button
             {

@@ -20,7 +20,7 @@ namespace TaskManagerApp
             this.user = loggedUser;
             InitializeComponent();
             this.Children.Add(new TasksTab { Title = "Tasks tab"});
-            this.Children.Add(new Tab2 { Title = "Tab 2" });
+            this.Children.Add(new UsersPage());
             this.Children.Add(new Tab3 { Title = "Tab 3" });             
            
         }
