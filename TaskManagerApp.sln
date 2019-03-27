@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagerApp.Android", "TaskManagerApp\TaskManagerApp.Android\TaskManagerApp.Android.csproj", "{791A9487-BE3A-454F-910E-B2223210DA07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagerApp", "TaskManagerApp\TaskManagerApp\TaskManagerApp.csproj", "{CC5F288D-2E16-4962-98A6-C687D17A749F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManagerApp", "TaskManagerApp\TaskManagerApp\TaskManagerApp.csproj", "{CC5F288D-2E16-4962-98A6-C687D17A749F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -13,6 +13,7 @@ namespace TaskManagerApp.Pages
 	public class Tab2 : ContentPage
 	{
         public IEnumerable<Users> UsersSource { get; set; }
+        public ListView listView;
 
 
 
@@ -25,34 +26,23 @@ namespace TaskManagerApp.Pages
             {
                 Text = "List of users"
             };
+            Button addContent = new Button
+            {
+                Text = "Press to get users"
+            };
             //Task.WaitAll();
             //RequestData();
 
             ListView listView = new ListView();
             List<string> names = new List<string>();
-            Task.Factory.StartNew(() => RequestData());
+            //Task.Factory.StartNew(() => RequestData());
             //RequestData();
             foreach (var user in UsersSource)
             {
                 names.Add(user.username);
             }
             listView.ItemsSource = names;
-            this.Content = new StackLayout { Children = { label, listView} };
-		}
-
-        private async void RequestData()
-        {
-            //var t = await apiClient.GetService();
-            UsersService us = new UsersService();
-            IEnumerable<Users> users = await us.GetUsers();
-            UsersSource = users;
-            //IEnumerable<Users> mock = new IEnumerable<Users>();
-            //mock = await us.GetUsers();
-            //UsersSource.ReplaceRange(mock);
-            //OnPropertyChanged(nameof(UsersSource));
-        }
-
-	}
+            this.Content = new StackLayout { Children = { label, liMV
 }
 
 
