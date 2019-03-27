@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TaskManagerApp.MVVM
 {
-    class UsersViewModel :INotifyPropertyChanged
+    public class UsersViewModel :INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         UsersListViewModel ulvm;
@@ -57,7 +57,7 @@ namespace TaskManagerApp.MVVM
                 if(user.password != value)
                 {
                     user.password = value;
-                    OnPropertyChanged("password")
+                    OnPropertyChanged("password");
                 }
             }
         }

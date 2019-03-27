@@ -4,11 +4,23 @@
              x:Class="TaskManagerApp.UsersPage">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Press to get content" FontSize="Medium" BorderWidth="1"
-                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
-                    Clicked="Button_Clicked"/>
-            <Label Text="{Binding username}" FontSize="Medium"/>
-            <Label Text="{Binding password}" FontSize="Medium"/>
+            <Button Text="Add" Command="{Binding CreateUserCommand}"/>
+            <ListView x:Name="usList" ItemsSource="{Binding UsersList}"
+                      SelectedItem="{Binding SelectedUser,Mode=TwoWay}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding username}" FontSize="Medium"/>
+                                    <Label Text="{Binding password}" FontSize="Medium"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
 
         </StackLayout>
     </ContentPage.Content>

@@ -17,18 +17,8 @@ namespace TaskManagerApp
 		public UsersPage ()
 		{
 			InitializeComponent ();
+            this.BindingContext = new UsersListViewModel() { Navigation = this.Navigation };
 
 		}
-
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            UsersService us = new UsersService();
-            usersSource = await us.GetUsers();
-
-            this.BindingContext = new List<UsersViewModel>();
-
-
-        }
     }
 }

@@ -10,15 +10,15 @@ using TaskManagerApp.Services;
 
 namespace TaskManagerApp.Pages
 {
-	public class Tab2 : ContentPage
-	{
+    public class Tab2 : ContentPage
+    {
         public IEnumerable<Users> UsersSource { get; set; }
         public ListView listView;
 
 
 
-        public Tab2 ()
-		{
+        public Tab2()
+        {
             //BindingContext = this;
             //ObservableRangeCollection
             //UsersSource = new IEnumerable<Users>();
@@ -42,30 +42,34 @@ namespace TaskManagerApp.Pages
                 names.Add(user.username);
             }
             listView.ItemsSource = names;
-            this.Content = new StackLayout { Children = { label, liMV
+            this.Content = new StackLayout
+            {
+                //Children = { label, liMV }
+            };
+        }
+    }
 }
 
-
-/*
- * <ListView ItemsSource="{Binding UsersSource}"
-                  HorizontalOptions="FillAndExpand"
-                  VerticalOptions="FillAndExpand">
-        <ListView.Header>
-            <StackLayout>
-                <Label Text="List of users" FontSize="Large"></Label>
-            </StackLayout>
-        </ListView.Header>
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Padding="5,10">
-                        <Label FontSize="Large" Text="{Binding Id}"></Label>
-                        <Label FontSize="Large" Text="{Binding Username}"></Label>
-                        <Label FontSize="Large" Text="{Binding Password}"></Label>
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
-    from MainPage.xaml
- */
+    /*
+     * <ListView ItemsSource="{Binding UsersSource}"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand">
+            <ListView.Header>
+                <StackLayout>
+                    <Label Text="List of users" FontSize="Large"></Label>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5,10">
+                            <Label FontSize="Large" Text="{Binding Id}"></Label>
+                            <Label FontSize="Large" Text="{Binding Username}"></Label>
+                            <Label FontSize="Large" Text="{Binding Password}"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        from MainPage.xaml
+     */
