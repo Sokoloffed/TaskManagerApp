@@ -8,7 +8,7 @@ namespace TaskManagerApp.Serivces
 {
     public class ApiClient
     {
-        public string apiUri = @"http://ce1673c5.ngrok.io/api/";
+        public string apiUri = @"http://3ef57882.ngrok.io/api/";
         private static HttpClient httpClient = new HttpClient();
 
         public ApiClient()

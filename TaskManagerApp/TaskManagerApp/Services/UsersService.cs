@@ -58,15 +58,55 @@ namespace TaskManagerApp.Services
             return res;
         }
 
-        public async Task<bool> PostUser(Users user)
+        public async Task<bool> PostUserAsync(Users user)
         {
             var response = await httpClient.PostAsJsonAsync<Users>(this.apiClient.apiUri + "/Users/Post/", user);
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 return true;
             }
+            else return false;            
+        }
+
+        public bool PostUserSync(Users user)
+        {
+            bool res = false;
+            var HClient = new HttpClient
+            {
+                BaseAddress = new Uri(this.apiClient.apiUri)
+            };
+            var response = HClient.PostAsJsonAsync("/Users/Post/", user);
+            response.Wait();
+            if (response.Result.StatusCode == HttpStatusCode.OK)
+            {
+                var jsonT = response.Result.Content.ReadAsStringAsync();
+                jsonT.Wait();
+                bool isPost = JsonConvert.DeserializeObject<bool>(jsonT.Result);
+                res = isPost;
+            }
+            return res;
+        }
+
+        public async Task<bool> DeleteUserAsync(Users user)
+        {
+            var response = await httpClient.DeleteAsync(this.apiClient.apiUri + $"/Users/Delete?id={user.id}");
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                return true;
+            }
             else return false;
-            
+        }
+
+        public bool DeleteUserSync(Users user)
+        {
+            bool res = false;
+            var response = httpClient.DeleteAsync(this.apiClient.apiUri + $"/Users/Delete?id={user.id}");
+            response.Wait();
+            if(response.Result.StatusCode == HttpStatusCode.OK)
+            {
+                res = true;
+            }
+            return res;
         }
     }
 }

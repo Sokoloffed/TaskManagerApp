@@ -21,11 +21,11 @@ namespace TaskManagerApp
             Title = "Login page";
             unameE = new Entry
             {
-                Text = "Ba"
+                Text = ""
             };
             upasE = new Entry
             {
-                Text = "Sya"
+                Text = ""
             };
             Button logButton = new Button
             {
@@ -52,11 +52,10 @@ namespace TaskManagerApp
             UsersService us = new UsersService();
             Users newUser = new Users
             {
-                id = 1000,
                 username = name,
                 password = pas
             };
-            bool isCreated = await us.PostUser(newUser);
+            bool isCreated = await us.PostUserAsync(newUser);
             if (isCreated)
             {
                 await Navigation.PushAsync(new MainPage(newUser));

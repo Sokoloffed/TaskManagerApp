@@ -6,6 +6,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using TaskManagerApp.Pages;
+using TaskManagerApp.Services;
 
 namespace TaskManagerApp.MVVM
 {
@@ -67,24 +68,33 @@ namespace TaskManagerApp.MVVM
             Navigation.PopAsync();
         }
 
-        private void SaveUser(object userObj)
+        private async void SaveUser(object userObj)
         {
             UsersViewModel userS = userObj as UsersViewModel;
             if( (userS != null) && userS.isValid() )
             {
-                UsersList.Add(userS);
+                bool postRes = false;
+                UsersService us = new UsersService();
+                postRes = await us.PostUserAsync(userS.user);//us.PostUserSync(userS.user);
+                if (postRes)
+                    UsersList.Add(userS);
             }
             Back();
         }
 
-        private void DeleteUser(object userObj)
+        private async void DeleteUser(object userObj)
         {
             UsersViewModel userD = userObj as UsersViewModel;
-            if(userD != null)
+            if(userD != null && userD.isValid())
             {
-                UsersList.Remove(userD);
+                bool delRes = false;
+                UsersService us = new UsersService();
+                delRes = await us.DeleteUserAsync(userD.user);
+                if (delRes)
+                    UsersList.Remove(userD);
             }
             Back();
         }
+
     }
 }
