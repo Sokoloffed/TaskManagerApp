@@ -14,6 +14,7 @@
             <Button Text="Add" Command="{Binding ListViewModel.SaveUserCommand}" CommandParameter="{Binding}"/>
             <Button Text="Delete" Command="{Binding ListViewModel.DeleteUserCommand}" CommandParameter="{Binding}"/>
             <Button Text="Back" Command="{Binding ListViewModel.BackCommand}"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

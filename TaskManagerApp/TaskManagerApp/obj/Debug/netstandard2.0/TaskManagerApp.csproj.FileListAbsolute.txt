@@ -13,4 +13,4 @@ C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Deb
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Debug\netstandard2.0\Pages\TasksPage.xaml.g.cs
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Debug\netstandard2.0\Pages\UsersPage.xaml.g.cs
 C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Debug\netstandard2.0\Pages\UserPage.xaml.g.cs
-C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Debug\netstandard2.0\TaskManagerApp.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\TaskManagerApp\TaskManagerApp\TaskManagerApp\obj\Debug\netstandard2.0\Pages\UserTasks.xaml.g.cs
