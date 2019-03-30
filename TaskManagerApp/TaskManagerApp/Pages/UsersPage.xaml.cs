@@ -17,10 +17,12 @@ namespace TaskManagerApp
         ObservableCollection<Users> usersSource;
         ObservableCollection<UsersViewModel> usersModels;
         UsersListViewModel usersList;
-        public UsersPage()
+        public Users curr_user;
+        public UsersPage(Users user)
         {
             InitializeComponent();
-            usersList = new UsersListViewModel() { Navigation = this.Navigation };
+            this.curr_user = user;
+            usersList = new UsersListViewModel(curr_user) { Navigation = this.Navigation };
             this.BindingContext = usersList;//new UsersListViewModel() { Navigation = this.Navigation };
 
 		}

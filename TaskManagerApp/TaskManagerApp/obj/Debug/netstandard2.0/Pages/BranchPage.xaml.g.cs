@@ -8,21 +8,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TaskManagerApp.Pages.BranchesPage.xaml", "Pages/BranchesPage.xaml", typeof(global::TaskManagerApp.BranchesPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TaskManagerApp.Pages.BranchPage.xaml", "Pages/BranchPage.xaml", typeof(global::TaskManagerApp.Pages.BranchPage))]
 
-namespace TaskManagerApp {
+namespace TaskManagerApp.Pages {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Pages\\BranchesPage.xaml")]
-    public partial class BranchesPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Pages\\BranchPage.xaml")]
+    public partial class BranchPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.ListView bsList;
+        private global::Xamarin.Forms.StackLayout branchStack;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(BranchesPage));
-            bsList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "bsList");
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(BranchPage));
+            branchStack = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "branchStack");
         }
     }
 }

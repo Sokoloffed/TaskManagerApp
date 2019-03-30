@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManagerApp.Pages.BranchPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="branchStack">
+                <Label Text="Branchname"/>
+                <Entry Text="{Binding branchname}" FontSize="Medium"/>
+                <Label Text="Description"/>
+                <Entry Text="{Binding description}" FontSize="Medium"/>
+                <Label Text="Creator"/>
+                <Entry Text="{Binding creator_id}" FontSize="Medium"/>
+                <Label Text="Created at"/>
+                <Entry Text="{Binding created_date}" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Add" Command="{Binding ListViewModel.SaveBranchCommand}" CommandParameter="{Binding}"/>
+            <Button Text="Delete" Command="{Binding ListViewModel.DeleteBranchCommand}" CommandParameter="{Binding}"/>
+            <Button Text="Back" Command="{Binding ListViewModel.BackCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

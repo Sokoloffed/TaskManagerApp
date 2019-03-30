@@ -18,13 +18,13 @@ namespace TaskManagerApp
         ObservableCollection<Tasks> tasksSource;
         ObservableCollection<TasksViewModel> tasksModels;
         TasksListViewModel tasksList;
-        Users t_user;
+        public Users t_user;
 
 		public TasksPage (Users user)
 		{
 			InitializeComponent ();
             this.t_user = user;
-            tasksList = new TasksListViewModel { Navigation = this.Navigation };
+            tasksList = new TasksListViewModel (t_user){ Navigation = this.Navigation };
             this.BindingContext = tasksList;
 		}
 

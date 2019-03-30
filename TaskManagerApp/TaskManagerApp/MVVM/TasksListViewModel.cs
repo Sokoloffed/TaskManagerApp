@@ -21,16 +21,18 @@ namespace TaskManagerApp.MVVM
         public ICommand DeleteTaskCommand { protected set; get; }
         public ICommand BackCommand { protected set; get; }
         TasksViewModel selectedTask;
+        public Users curr_user;
 
         public INavigation Navigation { get; set; }
 
-        public TasksListViewModel()
+        public TasksListViewModel(Users user)
         {
             TasksList = new ObservableCollection<TasksViewModel>();
             CreateTaskCommand = new Command(CreateTask);
             SaveTaskCommand = new Command(SaveTask);
             DeleteTaskCommand = new Command(DeleteTask);
             BackCommand = new Command(Back);
+            this.curr_user = user;
         }
 
         public TasksViewModel SelectedTask
@@ -43,7 +45,7 @@ namespace TaskManagerApp.MVVM
                     TasksViewModel tempTask = value;
                     selectedTask = null;
                     OnPropertyChanged("SelectedUser");
-                    Navigation.PushAsync(new TaskPage(tempTask));
+                    Navigation.PushAsync(new TaskPage(tempTask, curr_user));
                 }
             }
         }
@@ -58,7 +60,7 @@ namespace TaskManagerApp.MVVM
 
         private void CreateTask()
         {
-            Navigation.PushAsync(new TaskPage(new TasksViewModel() { ListViewModel = this }));
+            Navigation.PushAsync(new TaskPage(new TasksViewModel() { ListViewModel = this }, curr_user));
         }
 
         private void Back()

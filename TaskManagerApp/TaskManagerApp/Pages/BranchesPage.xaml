@@ -4,9 +4,26 @@
              x:Class="TaskManagerApp.BranchesPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Get branches" Clicked="Button_Clicked"/>
+            <Button Text="Add" Command="{Binding CreateBranchCommand}"/>
+            <ListView x:Name="bsList" ItemsSource="{Binding BranchesList}"
+                      SelectedItem="{Binding SelectedBranch,Mode=TwoWay}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding branchname}" FontSize="Medium"/>
+                                    <Label Text="{Binding description}" FontSize="Medium"/>
+                                    <Label Text="{Binding creator_id}" FontSize="Medium"/>
+                                    <Label Text="{Binding created_date}" FontSize="Medium"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

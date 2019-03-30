@@ -21,11 +21,13 @@ namespace TaskManagerApp.MVVM
         public ICommand DeleteUserCommand { protected set; get; }
         public ICommand BackCommand { protected set; get; }
         UsersViewModel selectedUser;
+        public Users curr_user;
 
         public INavigation Navigation { get; set; }
 
-        public UsersListViewModel()//(ObservableCollection<UsersViewModel> uc)
+        public UsersListViewModel(Users user)//(ObservableCollection<UsersViewModel> uc)
         {
+            this.curr_user = user;
             UsersList = new ObservableCollection<UsersViewModel>();
             //UsersList = uc;
             CreateUserCommand = new Command(CreateUser);
