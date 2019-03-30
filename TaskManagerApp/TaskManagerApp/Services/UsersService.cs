@@ -31,10 +31,10 @@ namespace TaskManagerApp.Services
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                var myObj = JsonConvert.DeserializeObject<ObservableCollection<Users>>(json);
+                var users = JsonConvert.DeserializeObject<ObservableCollection<Users>>(json);
                 //var myObj = JsonConvert.DeserializeObject<ObservableRangeCollection<Users>>(json);
-                if (!Equals(myObj, null))
-                    return myObj;
+                if (!Equals(users, null))
+                    return users;
                     //result = myObj;
             }
 
@@ -60,7 +60,7 @@ namespace TaskManagerApp.Services
 
         public async Task<bool> PostUserAsync(Users user)
         {
-            var response = await httpClient.PostAsJsonAsync<Users>(this.apiClient.apiUri + "/Users/Post/", user);
+            var response = await httpClient.PostAsJsonAsync<Users>(this.apiClient.apiUri + "Users/Post/", user);
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 return true;
@@ -75,7 +75,7 @@ namespace TaskManagerApp.Services
             {
                 BaseAddress = new Uri(this.apiClient.apiUri)
             };
-            var response = HClient.PostAsJsonAsync("/Users/Post/", user);
+            var response = HClient.PostAsJsonAsync("Users/Post/", user);
             response.Wait();
             if (response.Result.StatusCode == HttpStatusCode.OK)
             {
@@ -100,7 +100,7 @@ namespace TaskManagerApp.Services
         public bool DeleteUserSync(Users user)
         {
             bool res = false;
-            var response = httpClient.DeleteAsync(this.apiClient.apiUri + $"/Users/Delete?id={user.id}");
+            var response = httpClient.DeleteAsync(this.apiClient.apiUri + $"Users/Delete?id={user.id}");
             response.Wait();
             if(response.Result.StatusCode == HttpStatusCode.OK)
             {

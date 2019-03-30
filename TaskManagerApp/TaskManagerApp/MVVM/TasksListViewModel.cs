@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using TaskManagerApp.Services;
+using TaskManagerApp.Pages;
 
 namespace TaskManagerApp.MVVM
 {
@@ -41,7 +43,7 @@ namespace TaskManagerApp.MVVM
                     TasksViewModel tempTask = value;
                     selectedTask = null;
                     OnPropertyChanged("SelectedUser");
-                    Navigation.PushAsync(new TasksPage(tempTask));
+                    Navigation.PushAsync(new TaskPage(tempTask));
                 }
             }
         }
@@ -56,7 +58,7 @@ namespace TaskManagerApp.MVVM
 
         private void CreateTask()
         {
-            Navigation.PushAsync(new TasksPage(new TasksViewModel() { ListViewModel = this }));
+            Navigation.PushAsync(new TaskPage(new TasksViewModel() { ListViewModel = this }));
         }
 
         private void Back()
@@ -70,7 +72,25 @@ namespace TaskManagerApp.MVVM
             if((taskS != null) && taskS.isValid())
             {
                 bool postRes = false;
+                TaskService ts = new TaskService();
+                postRes = await ts.PostAsync(taskS.task);
+                if (postRes)
+                    TasksList.Add(taskS);
 
+            }
+            Back();
+        }
+
+        private async void DeleteTask(object taskObj)
+        {
+            TasksViewModel taskD = taskObj as TasksViewModel;
+            if(taskD != null && taskD.isValid())
+            {
+                bool delRes = false;
+                TaskService ts = new TaskService();
+                delRes = await ts.DeleteAsync(taskD.task);
+                if (delRes)
+                    TasksList.Remove(taskD);
             }
             Back();
         }

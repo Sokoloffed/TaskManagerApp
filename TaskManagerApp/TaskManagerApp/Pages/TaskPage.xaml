@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManagerApp.Pages.TaskPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="taskStack">
+                <Label Text="Taskname"/>
+                <Entry Text="{Binding taskname}" FontSize="Medium"/>
+                <Label Text="Description"/>
+                <Entry Text="{Binding description}" FontSize="Small"/>
+                <Label Text="Date of beginning"/>
+                <Entry Text="{Binding date_begin}" FontSize="Medium"/>
+                <Label Text="Date of ending"/>
+                <Entry Text="{Binding date_end}" FontSize="Medium"/>
+                <Label Text="Status"/>
+                <Entry Text="{Binding status}" FontSize="Medium"/>
+                <Label Text="Creator"/>
+                <Entry Text="{Binding creator_id}" FontSize="Medium"/>
+                <Label Text="Executor"/>
+                <Entry Text="{Binding executor_id}" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Add" Command="{Binding ListViewModel.SaveTaskCommand}" CommandParameter="{Binding}"/>
+            <Button Text="Delete" Command="{Binding ListViewModel.DeleteTaskCommand}" CommandParameter="{Binding}"/>
+            <Button Text="Back" Command="{Binding ListViewModel.BackCommand}" CommandParameter="{Binding}"/>
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

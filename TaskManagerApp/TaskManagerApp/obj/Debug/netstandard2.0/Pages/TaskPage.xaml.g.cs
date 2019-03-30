@@ -8,21 +8,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TaskManagerApp.Pages.TasksPage.xaml", "Pages/TasksPage.xaml", typeof(global::TaskManagerApp.TasksPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TaskManagerApp.Pages.TaskPage.xaml", "Pages/TaskPage.xaml", typeof(global::TaskManagerApp.Pages.TaskPage))]
 
-namespace TaskManagerApp {
+namespace TaskManagerApp.Pages {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Pages\\TasksPage.xaml")]
-    public partial class TasksPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Pages\\TaskPage.xaml")]
+    public partial class TaskPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.ListView tsList;
+        private global::Xamarin.Forms.StackLayout taskStack;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(TasksPage));
-            tsList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "tsList");
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(TaskPage));
+            taskStack = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "taskStack");
         }
     }
 }
