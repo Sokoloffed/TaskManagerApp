@@ -7,26 +7,26 @@
             <Button Text="Get tasks created by you" Clicked="Button_Clicked"/>
             <Button Text="Get tasks delegated to you" Clicked="Button_Clicked_1"/>
             <Button Text="Add task" Command="{Binding CreateTaskCommand}"/>
-            <ListView x:Name="tsList" ItemsSource="{Binding tasksList}"
+                <ListView x:Name="tsList" ItemsSource="{Binding TasksList}"
                       SelectedItem="{Binding SelectedTask,Mode=TwoWay}" HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout>
-                                    <Label Text="{Binding taskname}" FontSize="Small"/>
-                                    <Label Text="{Binding description}" FontSize="Micro"/>
-                                    <Label Text="{Binding date_begin}" FontSize="Small"/>
-                                    <Label Text="{Binding date_end}" FontSize="Small"/>
-                                    <Label Text="{Binding status}" FontSize="Small"/>
-                                    <Label Text="{Binding creator_id}" FontSize="Small"/>
-                                    <Label Text="{Binding executor_id}" FontSize="Small"/>
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout>
+                                        <Label Text="{Binding taskname}" FontSize="Small"/>
+                                        <Label Text="{Binding description}" FontSize="Micro"/>
+                                        <Label Text="{Binding date_begin}" FontSize="Small"/>
+                                        <Label Text="{Binding date_end}" FontSize="Small"/>
+                                        <Label Text="{Binding status}" FontSize="Small"/>
+                                        <Label Text="{Binding creator_id}" FontSize="Small"/>
+                                        <Label Text="{Binding executor_id}" FontSize="Small"/>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
