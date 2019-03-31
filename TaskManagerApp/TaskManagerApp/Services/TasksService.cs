@@ -132,6 +132,22 @@ namespace TaskManagerApp.Services
             }
             else return false;
         }
+
+        public async Task<bool> AddTaskUser(int t_id, int u_id)
+        {
+            var response = await httpClient.GetAsync(this.apiClient.apiUri + $"Tasks/setTU?t_id={t_id}&u_id={u_id}");
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                return true;
+            }
+            else return false;
+            
+        }
+
+        public async Task<bool> AddTaskBranch(int t_id, int b_id)
+        {
+            return true;
+        }
     }
 
 }

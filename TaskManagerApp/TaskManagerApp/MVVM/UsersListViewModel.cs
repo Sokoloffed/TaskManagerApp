@@ -21,6 +21,8 @@ namespace TaskManagerApp.MVVM
         public ICommand DeleteUserCommand { protected set; get; }
         public ICommand BackCommand { protected set; get; }
         UsersViewModel selectedUser;
+        public int task_id;
+        public int branch_id;
         public Users curr_user;
 
         public INavigation Navigation { get; set; }
@@ -49,7 +51,20 @@ namespace TaskManagerApp.MVVM
                     Navigation.PushAsync(new UserPage(tempUser));
                 }
             }
+        }
 
+        public UsersViewModel SelectedUserAddTask
+        {
+            get { return selectedUser; }
+            set
+            {
+                if (selectedUser != value)
+                {
+                    selectedUser = value;
+                    OnPropertyChanged("SelectedUser");
+                    CreateUserTask();
+                }
+            }
         }
 
         protected void OnPropertyChanged(string propName)
@@ -96,6 +111,13 @@ namespace TaskManagerApp.MVVM
                     UsersList.Remove(userD);
             }
             Back();
+        }
+
+        private async void CreateUserTask()
+        {
+            TaskService ts = new TaskService();
+            bool addRes = await ts.AddTaskUser(task_id, selectedUser.id);
+
         }
 
     }

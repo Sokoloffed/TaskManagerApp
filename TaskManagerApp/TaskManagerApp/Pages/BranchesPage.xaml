@@ -5,9 +5,8 @@
     <ContentPage.Content>
         <StackLayout>
             <Button Text="Get branches" Clicked="Button_Clicked"/>
-            <Button Text="Add" Command="{Binding CreateBranchCommand}"/>
             <ListView x:Name="bsList" ItemsSource="{Binding BranchesList}"
-                      SelectedItem="{Binding SelectedBranch,Mode=TwoWay}" HasUnevenRows="True">
+                              SelectedItem="{Binding SelectedBranch,Mode=TwoWay}" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -24,6 +23,7 @@
                 </ListView.ItemTemplate>
 
             </ListView>
+            <Button Text="Add" Command="{Binding CreateBranchCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -29,6 +29,7 @@ namespace TaskManagerApp
 
         private async  void Button_Clicked(object sender, EventArgs e)
         {
+            usersList.UsersList.Clear();
             UsersService us = new UsersService();
             usersSource = await us.GetUsers();
             foreach(Users u in usersSource)

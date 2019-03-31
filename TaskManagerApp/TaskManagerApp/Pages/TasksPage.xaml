@@ -6,8 +6,7 @@
         <StackLayout>
             <Button Text="Get tasks created by you" Clicked="Button_Clicked"/>
             <Button Text="Get tasks delegated to you" Clicked="Button_Clicked_1"/>
-            <Button Text="Add task" Command="{Binding CreateTaskCommand}"/>
-                <ListView x:Name="tsList" ItemsSource="{Binding TasksList}"
+            <ListView x:Name="tsList" ItemsSource="{Binding TasksList}"
                       SelectedItem="{Binding SelectedTask,Mode=TwoWay}" HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -27,6 +26,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+            <Button Text="Add task" Command="{Binding CreateTaskCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

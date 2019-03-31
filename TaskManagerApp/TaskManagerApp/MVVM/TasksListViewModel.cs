@@ -20,6 +20,7 @@ namespace TaskManagerApp.MVVM
         public ICommand SaveTaskCommand { protected set; get; }
         public ICommand DeleteTaskCommand { protected set; get; }
         public ICommand BackCommand { protected set; get; }
+        public ICommand UpdateCommand { protected set; get; }
         TasksViewModel selectedTask;
         public Users curr_user;
 
@@ -32,6 +33,7 @@ namespace TaskManagerApp.MVVM
             SaveTaskCommand = new Command(SaveTask);
             DeleteTaskCommand = new Command(DeleteTask);
             BackCommand = new Command(Back);
+            UpdateCommand = new Command(Update);
             this.curr_user = user;
         }
 
@@ -95,6 +97,12 @@ namespace TaskManagerApp.MVVM
                     TasksList.Remove(taskD);
             }
             Back();
+        }
+
+        private async void Update(object taskObj)
+        {
+            TasksViewModel taskD = taskObj as TasksViewModel;
+
         }
     }
 }

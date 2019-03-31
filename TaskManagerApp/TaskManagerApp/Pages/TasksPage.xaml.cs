@@ -12,27 +12,49 @@ using TaskManagerApp.Services;
 
 namespace TaskManagerApp
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TasksPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class TasksPage : ContentPage
+    {
         ObservableCollection<Tasks> tasksSource;
         ObservableCollection<TasksViewModel> tasksModels;
         TasksListViewModel tasksList;
         public Users t_user;
 
-		public TasksPage (Users user)
-		{
-			InitializeComponent ();
+        public TasksPage(Users user)
+        {
+            InitializeComponent();
             this.t_user = user;
-            tasksList = new TasksListViewModel (t_user){ Navigation = this.Navigation };
+            tasksList = new TasksListViewModel(t_user) { Navigation = this.Navigation };
             this.BindingContext = tasksList;
-		}
+        }
 
+        /*protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            TaskService ts = new TaskService();
+            tasksSource = await ts.GetTasks();
+            tasksList.TasksList = new HashSet<TasksViewModel>();
+            foreach (Tasks t in tasksSource)
+            {
+                TasksViewModel tvm = new TasksViewModel
+                {
+                    id = t.id,
+                    taskname = t.taskname,
+                    description = t.description,
+                    date_begin = t.date_begin,
+                    date_end = t.date_end,
+                    status = t.status,
+                    creator_id = t.creator_id,
+                    executor_id = t.executor_id
+                };
+                tasksList.TasksList.Add(tvm);
+            }
+        }*/
         private async void Button_Clicked(object sender, EventArgs e)
         {
             TaskService ts = new TaskService();
             tasksSource = await ts.GetTasksCreator(this.t_user.id);
-            foreach(Tasks t in tasksSource)
+            foreach (Tasks t in tasksSource)
             {
                 TasksViewModel tvm = new TasksViewModel
                 {
@@ -54,7 +76,7 @@ namespace TaskManagerApp
         {
             TaskService ts = new TaskService();
             tasksSource = await ts.GetTasksExecutor(this.t_user.id);
-            foreach(Tasks t in tasksSource)
+            foreach (Tasks t in tasksSource)
             {
                 TasksViewModel tvm = new TasksViewModel
                 {
@@ -70,5 +92,28 @@ namespace TaskManagerApp
                 tasksList.TasksList.Add(tvm);
             }
         }
+
+        private async void Button_Clicked_2(object sender, EventArgs e)
+        {
+            tasksList.TasksList.Clear();
+            TaskService ts = new TaskService();
+            tasksSource = await ts.GetTasks();
+            foreach (Tasks t in tasksSource)
+            {
+                TasksViewModel tvm = new TasksViewModel
+                {
+                    id = t.id,
+                    taskname = t.taskname,
+                    description = t.description,
+                    date_begin = t.date_begin,
+                    date_end = t.date_end,
+                    status = t.status,
+                    creator_id = t.creator_id,
+                    executor_id = t.executor_id
+                };
+                tasksList.TasksList.Add(tvm);
+            }
+        }
+
     }
 }

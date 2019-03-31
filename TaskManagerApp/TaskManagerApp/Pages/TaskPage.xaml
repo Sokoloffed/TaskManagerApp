@@ -21,11 +21,11 @@
                 <Entry Text="{Binding executor_id}" FontSize="Medium"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"/>
-            <Button Text="Add" Command="{Binding ListViewModel.SaveTaskCommand}" CommandParameter="{Binding}"/>
+            <!--<Button Text="Add" Command="{Binding ListViewModel.SaveTaskCommand}" CommandParameter="{Binding}"/>
             <Button Text="Delete" Command="{Binding ListViewModel.DeleteTaskCommand}" CommandParameter="{Binding}"/>
-            <Button Text="Back" Command="{Binding ListViewModel.BackCommand}" CommandParameter="{Binding}"/>
-            
-
+            <Button Text="Back" Command="{Binding ListViewModel.BackCommand}" CommandParameter="{Binding}"/> -->
+            <Button Text="Add task to branch" Clicked="Button_Clicked"/>
+            <Button Text="Add task to user" Clicked="Button_Clicked_1"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
